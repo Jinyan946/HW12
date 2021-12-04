@@ -1,0 +1,261 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Basic Page - No Banner</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="content layout-2" role="document">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="container-fluid"><main>
+<div class="row">
+<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+<h1 style="color: #b1810b; text-align: left;">HW12 - Challenge</h1>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" />
+<p></p>
+<ul>
+<li><a href="#1">Description</a></li>
+<li><a href="#2">Instructions</a></li>
+<li><a href="#3" style="background-color: #ffffff;">Testing</a></li>
+<li><a href="#4">Submit</a></li>
+</ul>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" />
+<h2 id="1">Description</h2>
+<p>For this Homework, you will be implementing one class: <code>Paint</code> that will be a more advanced implementation of the two we covered in the walkthrough and debugging exercises.&nbsp;</p>
+<p></p>
+<p>Note: 5 points of your Challenge grade is based on Coding Style.&nbsp; You will need to follow the standards described <a href="https://purdue.brightspace.com/d2l/le/content/307113/viewContent/6356290/View" target="_blank">here</a>.&nbsp; Use the "Run" button to check your Coding Style without using a submission.&nbsp;</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" />
+<h2 id="2">Instructions</h2>
+<p>All input and output should be done through the GUI. Any input and output conducted via the terminal will not receive points.&nbsp;</p>
+<h3>Starter Code</h3>
+<p>No Starter Code is provided.&nbsp;</p>
+<p></p>
+<h3>Layout</h3>
+<p>Your program should create a GUI paint application with the following features:</p>
+<ul>
+<li>The GUI appears in center of screen</li>
+<li>Top Panel has 4 buttons: Clear, Fill, Erase, Random</li>
+<li>Middle section is white canvas</li>
+<li>Bottom Panel has Hex <code>TextField</code>, Hex <code>Button</code>, R <code>TextField</code>, G <code>TextField</code>, B <code>TextField</code>, RGB <code>Button</code></li>
+</ul>
+<p></p>
+<h3>Implementation Instructions</h3>
+<h4 dir="auto"><code>Canvas</code></h4>
+<ul dir="auto">
+<li>When mouse is pressed and dragged, a line is drawn from beginning point to end point.</li>
+<li>Use code from Walkthrough to achieve this.</li>
+<li>The size of the pen stroke should be set to 5.</li>
+</ul>
+<h4 dir="auto"><code>JButton clrButton</code></h4>
+<ul dir="auto">
+<li>Clears canvas to white background.
+<ul>
+<li>Hint: A portion of the code in <code>paintComponent</code> method can help you achieve this.</li>
+</ul>
+</li>
+<li>Reset paint color for drawing to black.</li>
+<li>Reset text fields with <code>setText()</code>.
+<ul>
+<li><code>hexText</code> should reset the text to &ldquo;#&rdquo;.</li>
+<li><code>rText</code> should reset to an empty string.</li>
+<li><code>gText</code> should reset to an empty string.</li>
+<li><code>bText</code> should reset to an empty string.</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto"><code>JButton fillButton</code></h4>
+<ul dir="auto">
+<li>Fill the background with the current pen color.&nbsp;</li>
+<li>Reset paint color for drawing to black.</li>
+<li>Reset text fields with <code>setText()</code>
+<ul>
+<li><code>hexText</code> should reset the text to &ldquo;#&rdquo;.</li>
+<li><code>rText</code> should reset to an empty string.</li>
+<li><code>gText</code> should reset to an empty string.</li>
+<li><code>bText</code> should reset to an empty string.</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto"><code>JButton eraseButton</code></h4>
+<ul dir="auto">
+<li>Set the pen color equal to the current background color.&nbsp;</li>
+<li>Do not modify the text fields.&nbsp;</li>
+</ul>
+<h4 dir="auto"><code>JButton randomButton</code></h4>
+<ul dir="auto">
+<li>Change the pen color to a randomly generated color.&nbsp;</li>
+<li>Note: For details on random numbers, see the section below.&nbsp;</li>
+<li>Reset text fields with <code>setText()</code>
+<ul>
+<li><code>hexText</code> should reset the text to the hex value of the randomly generated color.&nbsp;</li>
+<li><code>rText</code> should reset to red value of color.</li>
+<li><code>gText</code> should reset to green value of color.</li>
+<li><code>bText</code> should reset to blue value of color.</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto"><code>JButton hexButton</code></h4>
+<ul dir="auto">
+<li>If the hex color is valid (ie. Does not throw a NumberFormatException when decoded):
+<ul>
+<li>Set the pen color to the hex value.</li>
+<li><code>rText</code> should reset to red value of color.</li>
+<li><code>gText</code> should reset to green value of color.</li>
+<li><code>bText</code> should reset to blue value of color.</li>
+</ul>
+</li>
+<li>If hex color is invalid:
+<ul>
+<li>Use <code>JOptionPane</code> to show an error message</li>
+<li>Title = "Error"</li>
+<li>Message = "Not a valid Hex Value"</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto"><code>JButton rgbButton</code></h4>
+<ul dir="auto">
+<li>If any of the rgb text fields are empty, set its value to 0.</li>
+<li>If the rgb color is valid (ie. Does not throw an error when new color is made):
+<ul>
+<li>Set paint color to rgb value.</li>
+<li>Set <code>hexText</code> to hex value of color.</li>
+<li><code>rText</code> should reset to red value of color.</li>
+<li><code>gTex</code>t should reset to green value of color.</li>
+<li><code>bText</code> should reset to blue value of color.</li>
+</ul>
+</li>
+<li>If the rgb color is invalid:
+<ul>
+<li>Use <code>JOptionPane<code> to show an error message</code></code></li>
+<li>Title = "Error"</li>
+<li>Message = "Not a valid RGB Value"</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto"><code>JTextField hexText</code></h4>
+<ul dir="auto">
+<li>Should have a &ldquo;#&rdquo; as the default text</li>
+<li>Columns set to 10</li>
+</ul>
+<h4 dir="auto"><code>JTextField rText</code></h4>
+<ul dir="auto">
+<li>Should have no text as the default text</li>
+<li>If <code>rgbButton</code> is pressed and the text field is empty, set the text to &ldquo;0&rdquo;</li>
+<li>Columns set to 5</li>
+</ul>
+<h4 dir="auto"><code>JTextField gText</code></h4>
+<ul dir="auto">
+<li>Should have no text as the default text</li>
+<li>If <code>rgbButton</code> is pressed and the text field is empty, set the text to &ldquo;0&rdquo;</li>
+<li>Columns set to 5</li>
+</ul>
+<h4 dir="auto"><code>JTextField bText</code></h4>
+<ul dir="auto">
+<li>Should have no text as the default text</li>
+<li>If <code>rgbButton</code> is pressed and the text field is empty, set the text to &ldquo;0&rdquo;</li>
+<li>Columns set to 5</li>
+</ul>
+<p></p>
+<h3>Hints</h3>
+<ul>
+<li dir="auto">How to retrieve RGB values from a color:
+<ul>
+<li dir="auto">
+<pre> Color color = Color.green;<br /> color.getRed();<br /> color.getGreen();<br /> color.getBlue();</pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li dir="auto">Making an RGB color a Hex String
+<ul>
+<li dir="auto">
+<pre>String.format("#%02x%02x%02x", r, g, b);</pre>
+</li>
+</ul>
+</li>
+<li dir="auto">Making a color from a Hex String
+<ul>
+<li dir="auto">
+<pre>Color color = Color.decode(hexStr);</pre>
+</li>
+</ul>
+</li>
+<li dir="auto">Making a color from a RGB Values
+<ul>
+<li dir="auto">
+<pre>Color rgbColor = new Color(r, g, b);</pre>
+</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"></p>
+<h3 dir="auto">Debugging</h3>
+<p dir="auto">What might cause an <code>Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException</code>?</p>
+<ul dir="auto">
+<li>You are attempting to access <code>graphics2D</code> inside an action listener
+<ul>
+<li>Solution: change <code>graphics2D</code> values in a separate method (see debug code color methods)</li>
+</ul>
+</li>
+<li>You are attempting to access text or button values inside a color changing method (ie. clear(), fill(), etc)
+<ul>
+<li>Solution: make changes to text or button values inside the action listener instead of a separate method</li>
+</ul>
+</li>
+<li>You are attempting to reference a method directly instead of using the paint object to call it
+<ul>
+<li>Solution: an instance of the class paint needs to call the methods - ex. paint.clear() not clear()</li>
+</ul>
+</li>
+</ul>
+<p></p>
+<h3 dir="auto">Random Numbers</h3>
+<p>
+We will be using the random number generator available in <code>Java.util.Random;</code>. Import it and declare a new Random object in the following format: <code>Random random = new Random();</code>. To retrieve a random integer from this object, you can use <code>random.nextInt()</code>. You'll need to figure out how to generate a number within a range of acceptable values (valid RGB). 
+</p>
+<p>
+Note: Random numbers generated this way are not truly random. Creating functionally random numbers is a significant issue in computer science and cryptography. You are welcome to make your numbers more random if you'd like to research ways to do so! 
+</p>
+<h3 dir="auto">Appearance</h3>
+<p>The specifics of the look and feel, the text messages you use, and the types of dialogs are all up to you. Keep in mind that all your decisions should be logical and design oriented.&nbsp;</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" />
+<h2 id="3">Testing</h2>
+<p>Run through the program with sample inputs and verify everything is performing as expected.&nbsp;</p>
+<p></p>
+<p>Note: Part of testing can be drawing a picture. Feel free to share your artwork on Campuswire in a "Homework 12 Artwork" post!&nbsp;&nbsp;</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" />
+<h2 id="4">Submit</h2>
+<p>After testing your solution and verifying that it meets the requirements described in this document, you can submit on Vocareum. Your work will be graded within 7 days of the due date.&nbsp;</p>
+<p></p>
+</div>
+</div>
+<footer></footer></main></div>
+
+</body>
+
+</html>
